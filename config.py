@@ -1,7 +1,8 @@
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
+class Settings(BaseSettings):
+    X_API_KEY: str
 
-# TODO: Create the settings class to read environment variables
+    model_config = SettingsConfigDict(env_file=".env")
 
-
-
-settings = None
+settings = Settings()
